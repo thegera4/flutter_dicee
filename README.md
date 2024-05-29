@@ -1,16 +1,5 @@
 # flutter_dicee
 
-Basic app to practice state management
+Basic app to practice stateful widgets
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![dicee_app](https://github.com/thegera4/flutter_dicee/assets/84020433/0e24ffd7-2d37-461c-b7a6-f79ac36c62e7)
