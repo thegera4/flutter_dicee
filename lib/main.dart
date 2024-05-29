@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 void main() {
   runApp(const MyApp());
@@ -51,8 +52,23 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-class DicePage extends StatelessWidget {
+class DicePage extends StatefulWidget {
   const DicePage({super.key});
+
+  @override
+  State<DicePage> createState() => _DicePageState();
+}
+
+class _DicePageState extends State<DicePage> {
+  int leftDiceNumber = 1;
+  int rightDiceNumber = 2;
+
+  void changeBothDice() {
+    setState(() {
+      leftDiceNumber = Random().nextInt(6) + 1;
+      rightDiceNumber = Random().nextInt(6) + 1;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -62,13 +78,23 @@ class DicePage extends StatelessWidget {
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.all(16.0),
-                child: Image.asset('images/dice1.png')
+                child: TextButton(
+                    // remove the default padding from the text button
+                    style: TextButton.styleFrom(padding: EdgeInsets.zero),
+                    onPressed: () { changeBothDice(); },
+                    child: Image.asset('images/dice$leftDiceNumber.png')
+                )
               ) ,
             ),
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.all(16.0),
-                child: Image.asset('images/dice2.png'),
+                child: TextButton(
+                    // remove the default padding from the text button
+                    style: TextButton.styleFrom(padding: EdgeInsets.zero),
+                    onPressed: () { changeBothDice(); },
+                    child: Image.asset('images/dice$rightDiceNumber.png')
+                ),
               ),
             ),
           ],
